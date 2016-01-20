@@ -1,0 +1,96 @@
+<!--MODAL WINDOW-->
+<script type="text/ng-template" id="updateModal.html">
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="close()"
+                aria-hidden="true"> x
+        </button>
+        <h4 id="modal-label">The update Date is: {{date.date | date:"dd MMMM / EEEE"}} </h4>
+    </div>
+
+    <form name="updateEventForm" novalidate>
+        <div class="modal-body">
+
+            <div class="form-group has-feedback">
+
+<!--
+                <div class="row">
+                    <div class="col-md-4 col-xs-4">
+                        <div class="col-md-6 col-xs-6"
+                             ng-class="{'has-error' : eventForm.fromHour.$invalid && !eventForm.fromHour.$pristine}"
+                             style="padding-left: 0px ;padding-right: 0px;">
+                            <label>From</label>
+                            <input type="number" name="fromHour" min="0" max="24" class="form-control timeInput"
+                                   ng-model="event.from.hour" placeholder="hour" required/>
+
+                            <p ng-show="eventForm.fromHour.$error.min" class="help-block">Min value for hour is 0.</p>
+
+                            <p ng-show="eventForm.fromHour.$error.max" class="help-block">Max value for hour is 24.</p>
+                        </div>
+                        <div class="col-md-6 col-xs-6"
+                             ng-class="{'has-error' : eventForm.fromMinutes.$invalid && !eventForm.fromMinutes.$pristine}"
+                             style="padding-left: 0px ;padding-right: 0px; padding-top: 25px;">
+                            <input type="number" name="fromMinutes" min="0" max="59" class="form-control timeInput"
+                                   ng-model="event.from.minutes" placeholder="min" required/>
+
+                            <p ng-show="eventForm.fromMinutes.$error.min" class="help-block">Min value for minutes is
+                                0.</p>
+
+                            <p ng-show="eventForm.fromMinutes.$error.max" class="help-block">Max value for minutes is
+                                59.</p>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4 col-xs-4">
+                    </div>
+
+                    <div class="col-md-4 col-xs-4" style="padding-right: 10px; padding-left: 15px;">
+                        <div class="col-md-6 col-xs-6"
+                             ng-class="{'has-error' : eventForm.toHour.$invalid && !eventForm.toHour.$pristine}"
+                             style="padding-left: 0px ;padding-right: 0px;">
+                            <label>To</label>
+                            <input type="number" name="toHour" min="0" max="24" class="form-control timeInput"
+                                   ng-model="event.to.hour" placeholder="hour" required/>
+
+                            <p ng-show="eventForm.toHour.$error.min" class="help-block">Min value for hour is 0.</p>
+
+                            <p ng-show="eventForm.toHour.$error.max" class="help-block">Max value for hour is 24.</p>
+                        </div>
+                        <div class="col-md-6 col-xs-6"
+                             ng-class="{'has-error' : eventForm.toMinutes.$invalid && !eventForm.toMinutes.$pristine}"
+                             style="padding-left: 0px ;padding-right: 0px; padding-top: 25px;">
+                            <input type="number" name="toMinutes" min="0" max="59" class="form-control timeInput"
+                                   ng-model="event.to.minutes" placeholder="min" required/>
+
+                            <p ng-show="eventForm.toMinutes.$error.min" class="help-block">Min value for minutes is
+                                0.</p>
+
+                            <p ng-show="eventForm.toMinutes.$error.max" class="help-block">Max value for minutes is
+                                59.</p>
+                        </div>
+                    </div>
+                </div>
+
+-->
+                <div ng-class="{'has-error' : updateEventForm.name.$invalid && !updateEventForm.name.$pristine}">
+                    <label class="control-label" style="padding-top: 10px"> Event Name: </label>
+                    <input type="text" name="name" placeholder="Name" ng-value="event.name" class="form-control"
+                           ng-model="event.name" required>
+                    <p ng-show="updateEventForm.name.$invalid && !updateEventForm.name.$pristine" class="help-block">You
+                        name is
+                        required.</p>
+                </div>
+
+                <label for="comment" style="padding-top: 10px">Comment:</label>
+                <textarea class="form-control" placeholder="Comment" rows="5" id="comment"
+                          ng-model="event.comment"></textarea>
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <button class="btn btn-warning" ng-click="deleteEvent()">Delete</button>
+            <button class="btn btn-default" ng-disabled="updateEventForm.$invalid" ng-click="updateEvent()">Update</button>
+            <button class="btn btn-danger" ng-click="close()">Close</button>
+        </div>
+    </form>
+</script>

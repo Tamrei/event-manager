@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+    <title> Event manager </title>
+    <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.css" media="screen"/>
+
+    <link href="resources/css/font-awesome.css" rel="stylesheet">
+
+    <link href="styles/buttons.css" rel="stylesheet">
+    <link href="styles/general.css" rel="stylesheet">
+    <link href="styles/seven-row-grid.css" rel="stylesheet">
+    <link href="styles/ng-animation.css" rel="stylesheet">
+
+    <link href="styles/main-panel.css" rel="stylesheet">
+
+    <script src="resources/js/bootstrap.3.0.0.min.js"></script>
+    <script src="resources/js/angular147.js"></script>
+
+    <script src="resources/js/angular-route.js"></script>
+    <script src="resources/js/angular-animate147.js"></script>
+    <script src="resources/js/angular-ui-router.js"></script>
+    <script src="resources/js/ui-bootstrap-tpls-0.14.3.js"></script>
+
+    <script src="resources/js/angular-ui-router.js"></script>
+
+    <script src="resources/js/anim-in-out.js"></script>
+
+    <script src="model/weekDay.js"></script>
+    <script src="model/event.js"></script>
+    <script src="controllers/calendar.controller.js"></script>
+    <script src="controllers/calendar-modal.controller.js"></script>
+    <script src="controllers/updateEvent-modal.controller.js"></script>
+    <script src="controllers/confirmDelete-modal.controller.js"></script>
+    <script src="controllers/eventList-modal.controller.js"></script>
+
+    <script src="directive/calendar.directive.js"></script>
+    <script src="directive/validateTime.directive.js"></script>
+    <script src="directive/timePointer.directive.js"></script>
+    <script src="services/calendar.service.js"></script>
+    <script src="services/storage.service.js"></script>
+
+    <script src="app.js"></script>
+</head>
+
+
+<body ng-controller="calendarController" style="padding-top: 0;">
+
+<div ng-include="'components/upcomingEvents.html'"></div>
+
+<div class="container" style="padding-top: 30px;">
+
+    <div class="row">
+        <div class="span12 ui-view-container row seven-cols view-container">
+
+            <div class="row">
+                <div class="col-md-1 col-xs-3" style="width: 90px;">
+                    <input type="number" min="1" max="31" class="form-control timeInput"
+                           placeholder="day" ng-model="navigate.day"/>
+                </div>
+                <div class="col-md-1 col-xs-3" style="width: 90px;">
+                    <input type="number" min="1" max="12" class="form-control timeInput"
+                           placeholder="month" ng-model="navigate.month"/>
+                </div>
+                <div class="col-md-1 col-xs-3" style="width: 90px;">
+                    <input type="number" class="form-control timeInput"
+                           placeholder="year" ng-model="navigate.year"/>
+                </div>
+                <div class="col-md-1 col-xs-3" style="width: 90px;">
+                    <button class="btn btn-default" ng-click="goToDate()"> Go to date.</button>
+                </div>
+            </div>
+
+            <hr class="shadow">
+
+            <script type="text/ng-template" id="myPopoverTemplate.html">
+                <div style="min-width: 200px;">
+                    <div class="panel-time" style="">
+                        <strong>From:</strong>
+                        {{dynamicPopover.content.from.hour}}.{{dynamicPopover.content.from.minutes}}
+                        <strong> - To:</strong> {{dynamicPopover.content.to.hour}}.{{dynamicPopover.content.to.minutes}}
+                    </div>
+                    {{dynamicPopover.content.comment}}
+                </div>
+            </script>
+
+            <div class="row">
+                <div class="col-md-4 col-xs-4">
+                    <button class="btn btn-default" style="float: left;" ng-click="OpenEventList()"> <span
+                            class="badge" id="cartCount"> {{eventCount}} </span> Event List
+                    </button>
+                </div>
+
+                <div class="col-md-4 col-xs-4 year-info"><h2>{{yearNumber}}</h2>
+                </div>
+
+                <div class="col-md-4 col-xs-4">
+
+                    <div class="btn-group btn-group-mg" style="float: right;">
+                        <button type="button" class="btn btn-default"
+                                ui-sref="weekRow({week: weekNumb, year: yearNumber})"
+                                ng-click="prevWeek()"><span class="glyphicon glyphicon-chevron-left"></span>
+                        </button>
+                        <button type="button" class="btn btn-default" ng-click="goToToday()">Today</button>
+                        <button type="button" class="btn btn-default"
+                                ui-sref="weekRow({week: weekNumb, year: yearNumber})"
+                                ng-click="nextWeek()"><span class="glyphicon glyphicon-chevron-right"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="well animated-view view shadow weeks-panel" ng-class="weekChangeAnimation" id="weekArea"
+                 ui-view>
+            </div>
+
+            <div ng-include="'components/timeBar.html'"></div>
+
+            <div ng-include="'modals/saveEventModal.html'"></div>
+            <div ng-include="'modals/updateEvent.html'"></div>
+            <div ng-include="'modals/eventListModal.html'"></div>
+            <div ng-include="'modals/confirmDeleteModal.html'"></div>
+
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
+
+
+<!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.js"></script>
+<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.14.3.js"></script>-->
+<!--<script src="resources/js/angular-ui-bootstrap.js"></script>-->
+
+<!--
+   <script src="config/calendar.config.js"></script>
+   <script src="config/calendar.run.js"></script>
+
+<script src="resources/js/popover/angular-strap.js"></script>
+<script src="resources/js/popover/angular-strap.tpl.js"></script>
+-->

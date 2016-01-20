@@ -1,0 +1,37 @@
+
+<div class="container-fluid text-center upcoming-events"
+      style="padding-bottom: 0;">
+    <div class="container " style="padding: 0">
+        <div class="row">
+            <div class="col-md-3 col-lg-3" ng-repeat="event in upcomingEvents" style="padding-left: 0">
+
+                <div ng-if="event.timeTo">
+                    <div class="panel panel-primary" ng-click='open(today, event, $index)'>
+                        <div class="panel-heading"><strong>{{event.name}}</strong> start's in
+                            <time-left time="event.timeTo"></time-left>
+                        </div>
+                        <div class="panel-time">
+                            <strong>From:</strong> {{event.from.hour}}.{{event.from.minutes}}
+                            - <strong> To:</strong> {{event.to.hour}}.{{event.to.minutes}}
+                        </div>
+                        <div class="panel-body">{{event.comment}}</div>
+                    </div>
+                </div>
+
+                <div ng-if="event.current" ng-click='open(today, event, $index)'>
+                    <div class="panel panel-danger">
+                        <div class="panel-heading"><strong>{{event.name}}</strong> end's in
+                            <time-left time="event.current"></time-left>
+                        </div>
+                        <div class="panel-time">
+                            <strong>From:</strong> {{event.from.hour}}.{{event.from.minutes}}
+                            - <strong> To:</strong> {{event.to.hour}}.{{event.to.minutes}}
+                        </div>
+                        <div class="panel-body">{{event.comment}}</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

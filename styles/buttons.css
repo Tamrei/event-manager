@@ -1,0 +1,80 @@
+.btn {
+    border-radius: 0;
+}
+
+.btn-default {
+    border: 1px solid #266C8E;
+    color: #EAEAEA;
+    background-color: #266C8E;
+    outline: #266C8E !important;
+}
+
+.btn-primary {
+    color: #EAEAEA;
+    background-color: #3C3C3C;
+    border-color: #3C3C3C;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+    background: #3A9FCD;
+    border-color: #3A9FCD;
+}
+
+.btn-primary:active, .btn-primary.active {
+    background: #3C3C3C;
+    border-color: #3C3C3C;
+    box-shadow: none;
+}
+
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default {
+    background: #3A9FCD;
+    border-color: #3A9FCD;
+    color: #EAEAEA;
+    outline: 0 none;
+    /*box-shadow:  0 0 4px #69993b;*/
+}
+
+.btn:focus,.btn:active:focus,.btn.active:focus,
+.btn.focus,.btn:active.focus,.btn.active.focus {
+    outline: none;
+}
+
+.btn-default:disabled {
+    background-color: gray;
+    border-color: gray;
+    color: #ffffff;
+}
+
+/* INPUT */
+input, textarea {
+    border-radius: 0;
+}
+
+input:focus, input[type]:focus, input:hover, .uneditable-input:focus {
+    border-color: #3A9FCD;
+    box-shadow:  0 0 8px #3A9FCD;
+    outline: 0 none;
+}
+
+textarea:focus, textarea:hover {
+    border-color: #3A9FCD !important;
+    /*box-shadow: 0 1px 1px #3A9FCD inset, 0 0 8px #3A9FCD !important;*/
+    box-shadow:  0 0 8px #3A9FCD;
+    outline: 0 none !important;
+}
+
+.form-control {
+    border-radius: 0;
+}
+
+.timeInput {
+    padding-right: 12px;
+    width: 80px;
+}
+
+/* ALERT */
+.alert-danger {
+    background-color: darkred;
+    border-color: darkred;
+    color: #EAEAEA;
+}

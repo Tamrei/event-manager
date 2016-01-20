@@ -1,0 +1,78 @@
+.animated-view.well {
+}
+
+.ui-view-container {
+    position: relative;
+}
+
+.nextWeek {
+    position: relative;
+    min-width: 800px;
+
+    -webkit-transition: all 800ms ease-in-out;
+    -moz-transition: all 800ms ease-in-out;
+    -o-transition: all 800ms ease-in-out;
+    transition: all 800ms ease-in-out;
+}
+
+.nextWeek.ng-enter {
+    opacity: .99;
+    left: 30%;
+}
+
+.nextWeek.ng-enter-active {
+    opacity: .99;
+    left: 0;
+}
+
+.nextWeek.ng-leave {
+    opacity: .99;
+    left: 30%;
+    display: none;
+}
+
+.nextWeek.ng-leave-active {
+    opacity: .99;
+    left: -0%;
+    display: none;
+}
+
+.prevWeek {
+    position: relative;
+    min-width: 800px;
+
+    -webkit-transition: all 800ms ease-in-out;
+    -moz-transition: all 800ms ease-in-out;
+    -o-transition: all 800ms ease-in-out;
+    transition: all 800ms ease-in-out;
+}
+
+
+.prevWeek.ng-enter {
+    opacity: .99;
+    right: 30%;
+}
+
+.prevWeek.ng-enter-active {
+    opacity: .99;
+    right: 0;
+}
+
+.prevWeek.ng-leave {
+    opacity: .99;
+    left: 30%;
+    display: none;
+}
+
+.prevWeek.ng-leave-active {
+    opacity: .99;
+    left: 30%;
+    display: none;
+}
+
+
+
+
+
+
+

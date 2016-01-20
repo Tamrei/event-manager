@@ -1,0 +1,127 @@
+body {
+    background-color:  #ededed;
+    background-image: url("http://www.solutiisoft.com/bootstrap-sidebar/public/img/bg.png");
+}
+
+/** out custom table **/
+.table-curved {
+    border-collapse: separate;
+}
+
+.table-curved {
+    border: solid #ccc 0px;
+    border-radius: 0px;
+}
+
+.list-group-item {
+    background-color: #EAEAEA;
+    color: #000000;
+}
+
+.carousel-control, .item {
+    border-radius: 2px;
+}
+
+/** Custom buttons **/
+.btn-primary {
+    color: white;
+    background-color: darkgreen;
+    border-color: darkgreen;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+    background: green;
+    border-color: green;
+}
+
+.btn-primary:active, .btn-primary.active {
+    background: green;
+    border-color: green;
+    box-shadow: none;
+}
+
+.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
+    z-index: 2;
+    color: white;
+    background-color: darkgreen;
+    border-color: darkgreen;
+}
+
+
+
+
+#footer {
+    color: #6d6d6d;
+    font-size: 12px;
+    text-align: center;
+}
+#footer p {
+    margin-bottom: 0;
+}
+#footer a {
+    color: inherit;
+}
+
+
+/** DELETE **/
+
+img {
+    border-radius: 1px;
+}
+
+.table {
+    margin-bottom: 0;
+    border: none;
+    padding: 0;
+}
+
+.borderless tbody tr td, .borderless tbody tr th, .borderless thead tr th {
+    border: none;
+}
+
+.modal-dialog {
+    padding-top: 165px;
+}
+
+
+
+
+
+.list-group-item {
+    border: none;
+    border-radius: 0;
+}
+
+.btn {
+    border-radius: 3px;
+}
+
+.list-group {
+    border-radius: 0;
+}
+
+
+
+
+/** Shop **/
+
+.thumbnail {
+    height: 185px;
+}
+
+#priceInformation {
+    color: darkgreen;
+    padding-left: 5px;
+}
+
+/** Shop **/
+
+
+/*
+img {
+    border: 1px solid darkgrey;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 3px;
+}
+*/

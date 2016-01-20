@@ -1,0 +1,344 @@
+body {
+    background: #404040; /*#294978;*/ /*#2f4050;*/ /* #2F4254 (old dark blue) #34495e; *//*#2f4050;*/
+    padding-top: 80px;
+    /* cool green color #5cb85c; */
+    /* cool grey color #f9f9f9; */
+    /* cool salatlike color #4a816b */
+    text-shadow: 0 .01rem 0.01rem rgba(9, 14, 28, 0.2);
+
+}
+
+
+.panel,.panel > .panel-heading {
+    border-radius: 0;
+}
+
+.panel {
+    border: 1px lightgray solid;
+}
+
+li {
+    color: whitesmoke;
+}
+
+.bordered {
+    border: 1px solid #3c3e49;;
+}
+
+.shadow {
+    -webkit-box-shadow: 0px 0px 183px -31px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 183px -31px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 183px -31px rgba(0, 0, 0, 0.75);
+    border-radius: 0;
+}
+
+.day-bar-header {
+    font-size: 15px;
+    width: 135px;
+    margin-top: -9px;
+    margin-left: 0px;
+    background: #EAEAEA;
+    text-align: center;
+}
+
+h4 {
+    display: block;
+    padding-left: 2px;
+    padding-right: 2px;
+    border: none;
+}
+
+.event-time {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 100%;
+    height: 50%;
+    /*border: 3px solid #8AC007;*/
+    background-color: #3C3C3C !important;
+}
+
+.day-bar {
+    position: relative;
+    height: 730px;
+    max-height: 737px;
+    min-height: 737px;
+    /*border: 1px solid darkgray;*/
+    border: 1px solid #ddd;
+    background-color: #EAEAEA;
+}
+
+.day-bar:hover {
+    border: 1px solid #3A9FCD; /*#3C3C3C; /*#2f4050;*/
+}
+
+.event-in-day-bar {
+    position: absolute;
+    height: 50%;
+    padding-bottom: 35%;
+    left: 1%;
+    width: 98%;
+    background-color: #266C8E;
+    border-radius: 0;
+}
+
+.event-in-day-bar:hover {
+    position: center;
+    background-color: #3A9FCD !important;
+}
+
+.eventText {
+    color: #EAEAEA;
+    text-align: center;
+}
+
+.modal-footer {
+    background-color: #3C3C3C !important;
+}
+
+.event-thumbnail {
+    background-color: #3C3C3C;
+    color: #EAEAEA;
+    text-align: center;
+    border: 1px solid #3C3C3C;
+    border-radius: 0;
+}
+
+.event-thumbnail p {
+    color: #EAEAEA;
+}
+
+.event-thumbnail:hover {
+    border-color: #3C3C3C !important;
+    background-color: #5A6F2E /*!important*/;
+
+    -webkit-box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.75);
+}
+
+.popover {
+    border-radius: 0;
+    border-color: #3C3C3C !important;
+    text-align: center;
+    background-color: #EAEAEA;
+}
+
+.popover-title {
+    border-radius: 0;
+    color: #EAEAEA;
+    background-color: #3C3C3C !important;
+    border-color: #3C3C3C !important;
+}
+
+.form-inline .form-group {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.today {
+}
+
+.today > .day-bar-header {
+    color: #266C8E;
+}
+
+.dayFromOtherYear {
+}
+
+.dayFromOtherYear > .day-bar-header  {
+    /*color: gray;*/
+}
+
+.time-indicator {
+    color: #EAEAEA;
+    position: absolute;
+    /*top: 85px;*/
+    top: 155px;
+    /*right: 1200px;*/
+    left: -65px;
+    min-height: 720px;
+    max-height: 720px;
+}
+
+.modal-header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.time-indicator > li {
+    padding-top: 9.5px;
+}
+
+.modal-header, .modal-body {
+    background-color: #EAEAEA;
+}
+
+@media (max-width: 992px) {
+    .time-indicator {
+        display: none;
+    }
+}
+
+.event-panel {
+    min-height: 175px;
+    max-height: 175px;
+    overflow:hidden;
+}
+
+@media (min-width: 992px) {
+    .event-panel {
+
+        min-width: 195px;
+        max-width: 195px;
+    }
+}
+
+/*
+@media (min-width: 992px) {
+    .time-indicator {
+        display: block;
+        color: whitesmoke;
+        position: absolute;
+        top: 85px;
+
+        left: -65px;
+        min-height: 720px;
+        max-height: 720px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .time-indicator {
+        display: block;
+        color: whitesmoke;
+        position: absolute;
+        top: 85px;
+
+        left: -65px;
+        min-height: 720px;
+        max-height: 720px;
+    }
+}
+*/
+
+.selected-event-from- {
+    
+}
+
+.navigatedToEvent > .event-in-day-bar {
+    background-color: #5A6F2E;/*#c33c37;*/
+}
+
+.navigatedToEvent > .event-in-day-bar:hover {
+    background-color: /*#d43f3a*/#3C3C3C !important;
+}
+
+
+div.time-pointer {
+    position: absolute;
+    right: 0;
+    width: 7%;
+    border-top: 2px solid black; /*#7D4341;*/
+    z-index: 1000;
+}
+
+.panel-primary {
+    text-align: center;
+}
+
+.panel-danger > .panel-heading {
+    color: #EAEAEA;
+    background-color: #81413F;/*#d43f3a;*/
+}
+
+.panel-danger:hover > .panel-heading {
+    color: #EAEAEA;
+    background-color: #BA514B;/*#d43f3a;*/
+}
+
+.panel-primary > .panel-heading {
+    color: #EAEAEA;
+    background-color: #3C3C3C;
+    border: 1px solid #3C3C3C;
+
+}
+
+.panel-primary:hover > .panel-heading {
+    background-color: #5A6F2E;
+    border: 1px solid #5A6F2E;
+}
+
+ .panel-time {
+    /*padding-top: 2px;
+    padding-bottom: 2px;*/
+    border-bottom: 1px solid #DDDDDD;
+    border-top: 1px solid #DDDDDD;
+    background-color: #EAEAEA;
+    color: #080808;
+}
+
+.panel > .panel-body {
+    padding-top: 5px;
+    color: black;
+    background-color: #EAEAEA;
+}
+
+.upcoming-events {
+    padding-top: 20px;
+    padding-bottom: 30px;
+
+    background-color: #343434;
+
+    z-index: 1000;
+    overflow-y: auto;
+
+    /*opacity: 1 !important;
+    opacity: 0 !important;*/
+
+    -webkit-transition: all 0.5s ease !important;
+    -moz-transition: all 0.5s ease !important;
+    -o-transition: all 0.5s ease !important;
+    transition: all 0.5s ease !important;
+}
+
+.upcoming-events.toggled {
+    margin-top: -130px;
+}
+
+.upcoming-events.toggled > div {
+    /*display: none;*/
+}
+
+.container-fluid {
+
+}
+
+/*
+.col-md-3 {
+    transition: 0.5s linear all;
+    opacity: 1;
+}
+
+.col-md-3.ng-hide {
+    opacity: 0;
+}
+
+.event-notification.ng-hide {
+    position: relative;
+    min-width: 800px;
+
+    -webkit-transition: all 800ms ease-in-out;
+    -moz-transition: all 800ms ease-in-out;
+    -o-transition: all 800ms ease-in-out;
+    transition: all 800ms ease-in-out;
+}
+*/
+
+.activeEvent > .event-in-day-bar {
+    background-color: #81413F;
+}
+
+.activeEvent > .event-in-day-bar:hover  {
+    background-color: #BA514B !important;
+}

@@ -1,0 +1,24 @@
+.view-container {
+    min-height: 840px;
+    max-height: 800px;
+}
+
+.weeks-panel {
+    background-color: #EAEAEA;
+    padding-bottom: 750px;
+    border-radius: 0;
+}
+
+.year-info {
+    bottom: 18px;
+    text-align: center;
+    color: whitesmoke
+}
+
+hr {
+    border-color: #E5E5E5;
+}
+
+
+
+
