@@ -3,12 +3,11 @@
 
     angular
         .module('calendar.controller', [])
-        .controller("calendarController", ["calendarService", "storageService", "$timeout", "$scope", "$location", "$rootScope", "$uibModal", /*"$window",*/
+        .controller("calendarController", ["calendarService", "storageService", "$timeout", "$scope", "$location",
+            "$rootScope", "$uibModal",
             function (calendarService, storageService, $timeout, $scope, $location, $rootScope, $uibModal) {
                 $scope.eventCount = localStorage.length;
                 $scope.today = new Date();
-
-                //$scope.upcomingEventsPanelToggled = false;
 
                 var path = $location.path();
                 if (path == "") {
@@ -24,7 +23,7 @@
                 };
 
                 /**
-                 * navigate to todays date
+                 * navigate to today
                  */
                 $scope.goToToday = function () {
                     $scope.selectedEventStartTime = undefined;
@@ -36,7 +35,6 @@
                     $scope.selectedEventStartTime = undefined;
                     //$scope.weekChangeAnimation = "nextWeek";
                     $scope.weekNumb++;
-                    console.log("from method $rootScope.getPointerPos() : " + $rootScope.getTimePointerPos());
                 };
 
                 $scope.prevWeek = function () {
@@ -49,28 +47,7 @@
                     updateWeekPanel();
                 });
 
-                function updateWeekPanel() {
-                    var path = $location.path();
-
-                    var week = path.match(/[^a-zA-Z!@#\$%\^\&*/]\d{0,1}/);
-                    var year = path.match(/[^a-zA-Z!@#\$%\^\&*/]\d{3}/);
-
-                    if (week < 0) {
-                        $location.path(calendarService.getWeeksInYear(--year) + "/" + year);
-                        return;
-                    }
-                    if (week > 50 && week > calendarService.getWeeksInYear(year)) {
-                        $location.path(0 + "/" + ++year);
-                        return;
-                    }
-
-                    $scope.weekNumb = week;
-                    $scope.yearNumber = year[0];
-
-                    $scope.week = calendarService.getWeekByNumber(week, year);
-                }
-
-                var timeoutId; // timeoutId, so that we can cancel the time updates
+                var timeoutId;
 
                 // used to update the UI
                 function updateUpcomingEvents() {
@@ -105,7 +82,6 @@
 
                 updateLater(); // kick off the UI update process.
 
-                /* MODALS */
                 /**
                  * Opens modal that contains data about all events
                  *
@@ -149,8 +125,6 @@
                             //TODO: redo
                             $scope.eventCount = localStorage.length;
                             $scope.week = calendarService.getWeekByNumber($scope.weekNumb, $scope.yearNumber);
-                            //$scope.$apply(function () {
-                            //});
                             updateUpcomingEvents();
                         }, function () {
                         });
@@ -176,5 +150,26 @@
                     }
                     isUpdateModalOpened = false;
                 };
+
+                function updateWeekPanel() {
+                    var path = $location.path();
+
+                    var week = path.match(/[^a-zA-Z!@#\$%\^\&*/]\d{0,1}/);
+                    var year = path.match(/[^a-zA-Z!@#\$%\^\&*/]\d{3}/);
+
+                    if (week < 0) {
+                        $location.path(calendarService.getWeeksInYear(--year) + "/" + year);
+                        return;
+                    }
+                    if (week > 50 && week > calendarService.getWeeksInYear(year)) {
+                        $location.path(0 + "/" + ++year);
+                        return;
+                    }
+
+                    $scope.weekNumb = week;
+                    $scope.yearNumber = year[0];
+
+                    $scope.week = calendarService.getWeekByNumber(week, year);
+                }
             }]);
 })();

@@ -6,13 +6,6 @@
         </button>
         <h4>The Date is: {{date | date:"dd MMMM / EEEE"}} </h4>
 
-        <!--
-        <div ng-show=" eventForm.fromHour.$invalid && !eventForm.fromHour.$pristine" class="alert alert-danger"
-             style="margin-bottom: 0px;">
-            <strong>Error!</strong> Please .
-        </div>
-        -->
-
         <div ng-bind-html="overlapError" ng-show="overlapError" class="alert alert-danger"
              style="margin-bottom: 0px;">
             <strong>Error!</strong> {{overlapError}}
@@ -80,12 +73,6 @@
                     <p ng-show="eventForm.name.$invalid && !eventForm.name.$pristine" class="help-block">You name is
                         required.</p>
                 </div>
-
-                <!--
-                <pre>
-                    {{eventForm.toHour}}
-                </pre>
-                -->
 
                 <label for="comment" style="padding-top: 10px">Comment:</label>
                 <textarea class="form-control" placeholder="Comment" rows="5" id="comment"

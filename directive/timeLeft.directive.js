@@ -2,10 +2,10 @@
     'use strict';
 
     angular
-        .module('validateTime.directive', [])
-        .directive('timeLeft', validateTime);
+        .module('timeLeft.directive', [])
+        .directive('timeLeft', timeLeft);
 
-    function validateTime() {
+    function timeLeft() {
         return {
             link: function (scope) {
                 if (scope.time % 60 == 0) {

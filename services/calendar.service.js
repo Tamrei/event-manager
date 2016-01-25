@@ -12,7 +12,6 @@
             getWeekNumberByDate: getWeekNumberByDate,
             getCurrentWeek: getCurrentWeekNumber
         };
-
         return service;
 
         /**

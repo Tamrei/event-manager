@@ -19,9 +19,6 @@
                             key: function () {
                                 return selectedDay.key;
                             },
-                            eventToDelete: function () {
-                                return selectedEvent;
-                            },
                             eventIndex: function () {
                                 return eventIndex;
                             }
@@ -35,11 +32,7 @@
 
                 $scope.updateEvent = function () {
                     storageService.updateEvent(selectedDay.key, selectedEvent, eventIndex);
-                    var obj = {
-                        index: eventIndex,
-                        event: selectedEvent
-                    };
-                    $uibModalInstance.close(obj);
+                    $uibModalInstance.close();
                 };
 
                 $scope.close = function () {

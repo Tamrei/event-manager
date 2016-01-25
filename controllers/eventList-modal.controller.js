@@ -5,7 +5,6 @@
         .module('eventList-modal.controller', [])
         .controller("eventListModalController", ["$scope", "$rootScope", "$uibModalInstance", "calendarService", "storageService",
             function ($scope, $rootScope, $uibModalInstance, calendarService, storageService) {
-                //$scope.isCollapsed = true;
                 $scope.sortedList = storageService.getSortedEventList();
 
                 $scope.goToEvent = function (event) {
@@ -17,7 +16,6 @@
                         year: date[2],
                         eventStartTime: event.from
                     };
-
                     $uibModalInstance.close(obj);
                 };
 
@@ -28,6 +26,5 @@
                 $scope.close = function () {
                     $uibModalInstance.dismiss('cancel');
                 };
-
             }]);
 })();
